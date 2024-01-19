@@ -7,3 +7,9 @@ export dr="--dry-run=client -o yaml"
 #create an alias for namespace switch
 alias kn="kubectl config set-context --current -namespace "
 
+Imperative Commands:
+#update image of deployment
+kubectl set image deployment nginx-deploy nginx=nginx:1.17
+#rollback deployment
+kubectl rollout undo deployment nginx-deploy
+
