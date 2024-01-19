@@ -1,0 +1,9 @@
+#set alias for kubectl
+alias k=kubectl 
+
+#create a var for dry-run
+export dr="--dry-run=client -o yaml"
+
+#create an alias for namespace switch
+alias kn="kubectl config set-context --current -namespace "
+
