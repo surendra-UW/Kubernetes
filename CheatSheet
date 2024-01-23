@@ -5,7 +5,7 @@ alias k=kubectl
 export dr="--dry-run=client -o yaml"
 
 #create an alias for namespace switch
-alias kn="kubectl config set-context --current -namespace "
+alias kn="kubectl config set-context --current --namespace "
 
 Imperative Commands:
 #update image of deployment
@@ -13,3 +13,21 @@ kubectl set image deployment nginx-deploy nginx=nginx:1.17
 #rollback deployment
 kubectl rollout undo deployment nginx-deploy
 
+Docker Commands:
+#get images
+docker images
+#find running containers 
+docker ps --> (similar to kubectl ps)
+#pull image from docker hub
+docker pull <image-name>:<tag>
+#run the docker image 
+docker run <image-name>:<tag>
+options: 
+-d --> detach run container in the background giving terminal control 
+-p --> port binding container-port:target-port (application port)
+--name --> assign a name to the container
+#build image
+docker build -t <image-name>:<tag> <path-to-dockerfile>
+-t --> tags for multiple tags use -t nginx:latest -t nginx:1.10.13   
+#logs
+docker logs <container-id>
