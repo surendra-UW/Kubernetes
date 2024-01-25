@@ -13,4 +13,10 @@ kubectl set image deployment nginx-deploy nginx=nginx:1.17
 #rollback deployment
 kubectl rollout undo deployment nginx-deploy
 
+#configmaps
+kubectl create cm <cm-name> --from-literal=key=value --from-file=file.txt
+
+
+#exec into pod
+kubectl exec <pod-name> -- env --> environment variables 
 
